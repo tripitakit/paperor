@@ -1,0 +1,43 @@
+<article>
+<p><%= link_to "[New query]", root_path%></p>
+
+	<table id="papers" style="display: none;">
+		<caption>
+			"<%= h(@query) %>" in the last <%= @reladate %> days.
+		</caption>
+		<thead>
+			<tr>
+				<th>Country</th>
+ 				<th>Papers</th>
+			</tr>   
+		</thead>
+		<tfoot>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</tfoot>
+		<tbody>	
+			<% @countries.each do |country| %>
+				<tr>
+					<td><%= country %></td>
+					<td><%= @papers[country].count %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</article>
+<article>
+	<h2>Papers info</h2>
+		<% @countries.each do |country| %>
+		<h3><a name="<%= country %>"><%= country %></a></h3>
+			<% @papers[country].each do |paper| %>
+				<%= link_to paper.pmid, "http://www.ncbi.nlm.nih.gov/pubmed/#{paper.pmid}", :target => "_blank" %> <br/>
+				<%= paper.title %> <br />
+				<%= paper.affiliation %> <br /><br />
+			<% end %>
+			 <hr/>
+		<% end %>
+</article>
+
+

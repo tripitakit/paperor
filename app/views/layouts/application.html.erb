@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>	
+		<%= stylesheet_link_tag :all %>
+		<%= javascript_include_tag  'jquery','jquery-ui','jquery.colorbox-min', 'jquery.charts', 'rails', 'application' %>
+		<%= csrf_meta_tag %>
+		<title>paperor</title>
+	</head>
+	
+	<body>
+		<header>
+			<h1>paperor</h1>
+			<h2>Search and count PubMed  papers' origins</h2>
+		</header>
+		
+		<%= yield %>
+	
+	
+	
+	</body>
+</html>

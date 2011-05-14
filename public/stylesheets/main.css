@@ -1,0 +1,91 @@
+body {
+ font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+ font-size: 13px;
+ background: #171D20;
+}
+
+header, footer, article {display:block;} 
+
+header {
+ color: #336699;
+ padding: 0.5em;
+ background: #000;
+ margin: 0 2em 2em 2em;
+}
+
+
+article {
+	color: #ccc;
+	background: #171D20;
+ 	margin: 0 2em 2em 2em;
+}
+
+footer {
+	font: 0.8em "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+ 	clear:both;
+	color: gray;
+	margin: 0 2em 2em 2em;
+	padding: 0.5em;
+ 
+}
+
+a {
+ background: #171D20;
+ color: #336699;
+ text-decoration: none;
+}
+
+a:hover {
+ background: #171D20;
+ color: #D0EB6A;
+}
+
+h1 { 
+ font: bold 1.9em "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+ color: #336699; 
+ margin: 0;
+}
+
+h2 { 
+ font: bold 1.2em "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+ color: #336699; 
+}	
+
+h3 { 
+ font: bold  "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+ color: gray; 
+}	
+
+.form_item {
+	display:inline;
+	margin: 1em 1em 1em 1em;
+	float: left;
+}
+
+.blackinput {
+	background: #000;
+ 	color: #fff	;
+	padding: 0.2em;
+}
+
+#slider { width: 10em; float:left; margin:0.3em;}
+
+
+/* Chart */
+
+.chartscontainer {
+	border: 1px solid #336699;
+	padding: 10px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.chartscontainer ul {
+	padding-left: 0;
+}
+
+.chartscontainer li {
+	list-style: none;
+}
+
+.chartsbar {height : 0.8em;}

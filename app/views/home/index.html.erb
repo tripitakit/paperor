@@ -1,0 +1,86 @@
+<article>
+	<table id="total_papers" style="display: none;">
+		<caption style="align:left;">
+			Updated queries' totals up to now.
+		</caption>
+		<thead>
+			<tr>
+				<th>Country</th>
+				<th>Papers</th>
+			</tr>   
+		</thead>
+		<tfoot>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</tfoot>
+		<tbody>	
+			<% @countries.each do |country| %>
+				<% if country.total_papers_count > 0%>
+				<tr>
+					<td><%= country.name %></td>
+					<td><%= country.total_papers_count %></td>
+				</tr>
+				<% end %>
+			<% end %>
+		</tbody>
+	</table>
+
+</article>
+
+<article>
+	<div class="form">
+		<%= form_tag(results_path, :method => "post") do %>
+		<div class="form_item">		
+			<%= label_tag(:query, "Search for:") %>
+			<%= text_field_tag(:query, "", :size=>30, :class => "blackinput" ) %>
+		</div>
+		
+		<div class="form_item">		
+			<%= label_tag(:reldate, "Days ago:") %>
+			<%= text_field_tag :reldate, "" , :size=>3, :class => "blackinput" %>
+			<!-- <br />
+			<div id="slider_reldate" ></div> -->
+		</div>
+		
+		<div class="form_item">
+			<%= label_tag(:retmax, "Return max:") %>
+			<%= text_field_tag(:retmax, "", :size => 4, :class => "blackinput") %>
+			<!-- <br />
+			<div id="slider_retmax" ></div> -->
+		</div>
+		
+		<div class="form_item">
+			<%= submit_tag "Search"%>
+		<div class="form_item">
+		
+		<% end %>
+		</form>
+	</div>
+</article>
+
+	<footer>
+			<h3>Features:</h3>	 
+			<ul>
+				<li>Performs simple searches in <a href="http://www.ncbi.nlm.nih.gov/pubmed/" target="_blank">PubMed</a>.
+				<li>Groups and counts the number of papers by country,
+				searching for english country names in the paper's XML <code>&lt;Affiliation&gt;</code> tag.</li>
+				<li>Returns a chart of countries with the number of papers found for the submitted query</li>
+			</ul>
+			<h3>Search parameters:</h3>	 
+			<ul>
+				<li>Query: the string to be searched in pubmed.</li>
+				<li>Days ago: an integer number of days since today to search in; default 30.</li>
+				<li>Return max: maximum numbers of articles to fetch; default 100.</li>
+			</ul>
+			<h3>Known issues:</h3>
+			<ul>
+				<li>Results are biased by the optional nature of the affiliation tag, and even more by:</li>
+				<ul>
+				<li>the <a href="/countries">list of countries</a> searched for as origin of the papers: probably incomplete and not addressing possible spelling variations of countries names.</li>
+				<li>the search algorithm, which is a simple prototype not much than a proof of concept.
+				</ul>		
+				<li>This software is in early development stage. You could get some strange buggy pubmed ids.</li>
+			</ul>
+	</footer>

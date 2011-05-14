@@ -1,0 +1,11 @@
+<article>
+	
+	<h2>Searched country names for papers' origin</h2>
+
+	<% @countries.each do |country| %>  
+		<%= country.name %>&nbsp;|&nbsp;
+	<% end %>
+	
+	<%= link_to "[Back to query]", root_path %>
+	
+</article>
